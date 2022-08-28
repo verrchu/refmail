@@ -1,0 +1,8 @@
+{{ config.referee.first_name }} participated in the "{{ section.conference_name }}" conference
+{% if section.organizers %} in the field of {{ section.field }} held in {{ section.location }}
+in {{ time.month }} {{ time.year }}
+organized by 
+{% for org in section.organizers %}
+{{ org }}{% if not loop.last %},{% endif %}
+{% endfor %}
+{% endif %}
